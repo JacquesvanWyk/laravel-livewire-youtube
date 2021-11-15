@@ -8,13 +8,26 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+
     @livewireStyles
 </head>
 <body class="antialiased">
 <div>
-    <h1>Testing out Laravel Livewire</h1>
+    <h1 class="text-6xl font-bold text-red-800">Testing out Laravel Livewire</h1>
 
     <livewire:show-posts/>
+
+    <div x-data="{ open: false }">
+        <button @click="open = true">Expand</button>
+
+        <span x-show="open">
+          Content...
+        </span>
+    </div>
 
 </div>
 
